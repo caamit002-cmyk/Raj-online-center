@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#063b78">
+<meta name="description" content="Raj Online Centre - Online form filling, photography, photo printing and photo frames.">
+<link rel="manifest" href="manifest.json">
+<title>Raj Online Centre</title>
+<style>
+:root{--blue:#063b78;--blue2:#0b5eb3;--yellow:#ffd21f;--ink:#17243a;--muted:#65738a;--bg:#f3f7fc;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(135deg,#052e61,#0b5eb3);color:white;padding:22px 18px 26px;border-radius:0 0 25px 25px;box-shadow:0 5px 20px #0b376622}
+.top{display:flex;align-items:center;gap:12px}.logo{width:52px;height:52px;border-radius:16px;background:var(--yellow);color:var(--blue);display:grid;place-items:center;font-size:24px;font-weight:900;box-shadow:0 3px 0 #c9a400}
+h1{font-size:23px;line-height:1.1;margin:0}.tag{font-size:12px;opacity:.85;margin-top:5px;letter-spacing:.5px}
+.hero{margin-top:22px}.hero h2{font-size:25px;line-height:1.2;margin:0 0 8px}.hero p{margin:0;color:#e4efff;font-size:14px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.chip{background:#ffffff20;border:1px solid #ffffff40;padding:7px 11px;border-radius:30px;font-size:12px}
+main{max-width:760px;margin:auto;padding:16px 14px 100px}.search{display:flex;gap:8px;margin:2px 0 20px}.search input{flex:1;border:1px solid #dce5f0;background:white;border-radius:14px;padding:13px 15px;font-size:15px;outline:none}.section-head{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 12px}.section-head h3{font-size:18px;margin:0}.section-head span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.service{background:var(--card);border:1px solid #e5edf6;border-radius:18px;padding:15px 14px;text-align:left;box-shadow:0 5px 18px #183b6508;cursor:pointer;min-height:142px;transition:transform .12s}.service:active{transform:scale(.98)}.ico{width:47px;height:47px;border-radius:15px;display:grid;place-items:center;font-size:25px;margin-bottom:11px;background:#e8f2ff}.service:nth-child(4n+2) .ico{background:#e6f8ec}.service:nth-child(4n+3) .ico{background:#fff0e5}.service:nth-child(4n) .ico{background:#f1eaff}.service b{display:block;font-size:15px;margin-bottom:5px}.service small{color:var(--muted);font-size:12px;line-height:1.35;display:block}
+.banner{margin:20px 0;background:linear-gradient(115deg,#ffdf48,#fff0a3);border-radius:18px;padding:17px;display:flex;align-items:center;justify-content:space-between;gap:10px}.banner strong{font-size:17px;display:block}.banner small{font-size:12px}.banner .emoji{font-size:36px}
+.cta{background:var(--blue);color:white;border:0;border-radius:14px;padding:13px 16px;font-size:14px;font-weight:700;cursor:pointer}.cta.yellow{background:var(--yellow);color:#122b4b}.wide{width:100%}
+.info{background:white;border:1px solid #e4ecf5;border-radius:18px;padding:17px;margin-top:14px}.info h3{margin:0 0 10px;font-size:17px}.info p{color:var(--muted);font-size:13px;line-height:1.5;margin:6px 0}
+footer{position:fixed;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(12px);border-top:1px solid #e2eaf4;display:flex;justify-content:space-around;padding:9px 6px calc(9px + env(safe-area-inset-bottom));z-index:5}footer button{border:0;background:none;color:#63738a;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}footer .navico{font-size:21px}footer button.active{color:var(--blue);font-weight:800}
+.modal{display:none;position:fixed;inset:0;background:#061b36a6;z-index:10;align-items:flex-end;justify-content:center;padding:12px}.modal.show{display:flex}.sheet{background:white;border-radius:24px 24px 18px 18px;padding:22px;width:100%;max-width:600px;max-height:90vh;overflow:auto}.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.sheet h2{font-size:21px;margin:0}.close{border:0;background:#edf2f8;border-radius:50%;width:36px;height:36px;font-size:20px}.field{margin-top:13px}.field label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}.field input,.field select,.field textarea{width:100%;padding:13px;border:1px solid #d7e1ed;border-radius:12px;font:inherit;font-size:14px;background:#fff}.field textarea{min-height:85px;resize:vertical}.hint{font-size:12px;color:var(--muted);line-height:1.45;margin:12px 0}.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#122b4b;color:white;padding:12px 16px;border-radius:12px;display:none;z-index:20;font-size:13px;max-width:90%;text-align:center}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}header{padding:26px calc((100% - 730px)/2) 30px}.hero h2{font-size:30px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top"><div class="logo">Raj</div><div><h1>Raj Online Centre</h1><div class="tag">YOUR WORK • OUR SERVICE</div></div></div>
+  <div class="hero"><h2>Online services made<br>simple and easy.</h2><p>Form filling, photography, photo printing & beautiful photo frames — all in one place.</p>
+  <div class="chips"><span class="chip">✓ Fast Service</span><span class="chip">✓ Helpful Support</span><span class="chip">✓ Affordable</span></div></div>
+</header>
+<main>
+  <div class="search"><input id="search" placeholder="Search a service..." aria-label="Search services"><button class="cta" onclick="clearSearch()">Clear</button></div>
+  <div class="section-head"><h3>Online & Form Services</h3><span>Tap to enquire</span></div>
+  <div class="grid" id="forms">
+    <button class="service" data-name="Government Form Filling"><div class="ico">🏛️</div><b>Government Forms</b><small>Online applications and form filling</small></button>
+    <button class="service" data-name="Aadhaar Card Update Print"><div class="ico">🪪</div><b>Aadhaar Services</b><small>Update guidance, print and download assistance</small></button>
+    <button class="service" data-name="PAN Card Application"><div class="ico">📄</div><b>PAN Card</b><small>New application and correction assistance</small></button>
+    <button class="service" data-name="Passport Application"><div class="ico">🌐</div><b>Passport Services</b><small>Application and appointment assistance</small></button>
+    <button class="service" data-name="Railway Ticket Booking"><div class="ico">🚆</div><b>Railway Tickets</b><small>Ticket booking assistance</small></button>
+    <button class="service" data-name="Education Admission Scholarship Forms"><div class="ico">🎓</div><b>Education Forms</b><small>Admission, scholarship and exam forms</small></button>
+    <button class="service" data-name="Job Recruitment Exam Forms"><div class="ico">💼</div><b>Job & Exam Forms</b><small>Recruitment and competitive exam forms</small></button>
+    <button class="service" data-name="Other Online Services"><div class="ico">🖥️</div><b>Other Online Services</b><small>Ask us about a service you need</small></button>
+  </div>
+  <div class="banner"><div><strong>Capture your memories 📸</strong><small>Photo shoots, prints and custom frames</small><br><button class="cta yellow" style="margin-top:10px" onclick="document.getElementById('photos').scrollIntoView({behavior:'smooth'})">Explore photo services</button></div><div class="emoji">🖼️</div></div>
+  <div class="section-head" id="photos"><h3>Photography & Photo Frames</h3><span>Made for you</span></div>
+  <div class="grid">
+    <button class="service" data-name="Passport Size ID Card Photo"><div class="ico">📷</div><b>Passport / ID Photos</b><small>Passport size, ID card and application photos</small></button>
+    <button class="service" data-name="Photo Printing"><div class="ico">🖨️</div><b>Photo Printing</b><small>Print your favourite photos</small></button>
+    <button class="service" data-name="Photo Frames"><div class="ico">🖼️</div><b>Photo Frames</b><small>Custom frames, gifts and keepsakes</small></button>
+    <button class="service" data-name="Photo Editing Background Color"><div class="ico">✨</div><b>Photo Editing</b><small>Background, colour and size editing</small></button>
+    <button class="service" data-name="Family and Event Photography"><div class="ico">👨‍👩‍👧</div><b>Photography</b><small>Family, events and special moments</small></button>
+    <button class="service" data-name="Photo Collage and Gifts"><div class="ico">🎁</div><b>Photo Gifts</b><small>Collages and personalised photo gifts</small></button>
+  </div>
+  <div class="info"><h3>📍 Visit or contact Raj Online Centre</h3><p>For service availability, required documents, pricing and turnaround time, contact the shop directly.</p><button class="cta wide" onclick="openBooking('General Enquiry')">Send an enquiry on WhatsApp</button></div>
+  <div class="info"><h3>Important</h3><p>Raj Online Centre provides application assistance. Government applications are subject to the relevant department's rules and approval. Never share OTPs, passwords, or sensitive identity details in an unsecured message.</p></div>
+</main>
+<footer>
+<button class="active" onclick="window.scrollTo({top:0,behavior:'smooth'});setNav(this)"><span class="navico">⌂</span>Home</button>
+<button onclick="openBooking('Booking Request');setNav(this)"><span class="navico">▤</span>Bookings</button>
+<button onclick="document.getElementById('photos').scrollIntoView({behavior:'smooth'});setNav(this)"><span class="navico">▧</span>Gallery</button>
+<button onclick="showAbout();setNav(this)"><span class="navico">♙</span>About</button>
+<button onclick="openBooking('Contact Request');setNav(this)"><span class="navico">☎</span>Contact</button>
+</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+ <div class="sheet">
+  <div class="sheet-head"><h2 id="modalTitle">Service Enquiry</h2><button class="close" onclick="closeModal()" aria-label="Close">×</button></div>
+  <p class="hint">Fill in the details below. WhatsApp will open with your enquiry ready to send.</p>
+  <form id="bookingForm">
+   <div class="field"><label for="service">Service</label><input id="service" required></div>
+   <div class="field"><label for="customer">Your name</label><input id="customer" placeholder="Enter your name" required></div>
+   <div class="field"><label for="phone">Your mobile number (optional)</label><input id="phone" type="tel" placeholder="Enter mobile number"></div>
+   <div class="field"><label for="details">What do you need?</label><textarea id="details" placeholder="Tell us about the service, size, date, etc. Please do not include OTPs or passwords."></textarea></div>
+   <p class="hint">By continuing, you choose to open WhatsApp and send the details to the shop.</p>
+   <button class="cta wide" type="submit">Continue to WhatsApp</button>
+  </form>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const SHOP_WHATSAPP = "918271526030"; // Update this to your shop's WhatsApp number, including country code (India: 91...)
+const modal=document.getElementById('modal');
+function openBooking(name){document.getElementById('service').value=name;document.getElementById('modalTitle').textContent=name==='General Enquiry'?'Contact Raj Online Centre':'Service Enquiry';modal.classList.add('show')}
+function closeModal(){modal.classList.remove('show')}
+document.querySelectorAll('.service').forEach(el=>el.addEventListener('click',()=>openBooking(el.dataset.name)));
+document.getElementById('bookingForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const name=document.getElementById('customer').value.trim(), service=document.getElementById('service').value.trim(), phone=document.getElementById('phone').value.trim(), details=document.getElementById('details').value.trim();
+ const message=`Hello Raj Online Centre!%0A%0AEnquiry: ${encodeURIComponent(service)}%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(phone||'Not provided')}%0ADetails: ${encodeURIComponent(details||'Please contact me with details.')}`;
+ const digits=SHOP_WHATSAPP.replace(/\D/g,'');
+ if(digits.length<10){showToast('Please update the shop WhatsApp number in the app settings.');return}
+ window.open(`https://wa.me/${digits}?text=${message}`,'_blank');closeModal();
+});
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.service').forEach(el=>el.style.display=el.dataset.name.toLowerCase().includes(q)||el.innerText.toLowerCase().includes(q)?'block':'none')});
+function clearSearch(){document.getElementById('search').value='';document.querySelectorAll('.service').forEach(el=>el.style.display='block')}
+function setNav(el){document.querySelectorAll('footer button').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
+function showAbout(){document.querySelector('.info').scrollIntoView({behavior:'smooth'});showToast('Raj Online Centre — Your Work, Our Service')}
+function showToast(t){const el=document.getElementById('toast');el.textContent=t;el.style.display='block';setTimeout(()=>el.style.display='none',3000)}
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>
